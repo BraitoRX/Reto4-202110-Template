@@ -1,4 +1,4 @@
-﻿"""
+"""
  * Copyright 2020, Departamento de sistemas y Computación,
  * Universidad de Los Andes
  *
@@ -24,8 +24,14 @@
  * Dario Correal - Version inicial
  """
 
-
+{
+    "python.analysis.diagnosticSeverityOverrides": {
+        "reportMissingImports": "none"
+    }
+}
 import config as cf
+
+import csv
 from DISClib.ADT import list as lt
 from DISClib.ADT import map as mp
 from DISClib.DataStructures import mapentry as me
@@ -38,11 +44,19 @@ los mismos.
 """
 
 # Construccion de modelos
-
+def new_model():
+    model={}
+    pass
 # Funciones para agregar informacion al catalogo
 
 # Funciones para creacion de datos
-
+def cargar_datos_connections(nombre:str)->None:
+    archivo= csv.DictReader(open(cf.datadir+nombre.csv),dialect="utf-8",delimiter=",")
+    pass
+def cargar_datos_country(nombre:str)->None:
+    pass
+def cargar_datos_ldp(nombre:str)->None:
+    pass
 # Funciones de consulta
 
 # Funciones utilizadas para comparar elementos dentro de una lista
