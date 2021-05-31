@@ -23,7 +23,6 @@
 import config as cf
 import sys
 import controller
-from DISClib.ADT import list as lt
 assert cf
 
 
@@ -48,7 +47,8 @@ while True:
     printMenu()
     inputs = input('Seleccione una opción para continuar\n')
     if int(inputs[0]) == 1:
-        
+        catalog=controller.model_vacio()
+        controller.cargar_datos(catalog)
         print("Cargando información de los archivos ....")
 
     elif int(inputs[0]) == 2:

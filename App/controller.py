@@ -21,7 +21,7 @@
  """
 
 import config as cf
-import model
+import model as md
 import csv
 
 
@@ -30,8 +30,13 @@ El controlador se encarga de mediar entre la vista y el modelo.
 """
 
 # Inicialización del Catálogo de libros
-
+def model_vacio():
+    return md.new_model()
 # Funciones para la carga de datos
+def cargar_datos(model_vacio:dict,connections:str="connections",countries:str="countries",landing_points:str="landing_points")->None:
+    md.cargar_datos_country(model_vacio,countries)
+    md.cargar_datos_ldp(model_vacio,landing_points)
+    md.cargar_datos_connections(model_vacio,connections)
 
 # Funciones de ordenamiento
 
